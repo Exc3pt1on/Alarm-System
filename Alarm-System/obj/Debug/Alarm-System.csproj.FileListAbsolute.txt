@@ -1,0 +1,11 @@
+C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\Alarm-System\Alarm-System\bin\Debug\Alarm-System.exe.config
+C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\Alarm-System\Alarm-System\bin\Debug\Alarm-System.exe
+C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\Alarm-System\Alarm-System\bin\Debug\Alarm-System.pdb
+C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\Alarm-System\Alarm-System\obj\Debug\Alarm-System.csproj.AssemblyReference.cache
+C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\Alarm-System\Alarm-System\obj\Debug\Alarm_System.FrmAlarm.resources
+C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\Alarm-System\Alarm-System\obj\Debug\Alarm_System.FrmLogin.resources
+C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\Alarm-System\Alarm-System\obj\Debug\Alarm_System.Properties.Resources.resources
+C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\Alarm-System\Alarm-System\obj\Debug\Alarm-System.csproj.GenerateResource.cache
+C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\Alarm-System\Alarm-System\obj\Debug\Alarm-System.csproj.CoreCompileInputs.cache
+C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\Alarm-System\Alarm-System\obj\Debug\Alarm-System.exe
+C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\Alarm-System\Alarm-System\obj\Debug\Alarm-System.pdb

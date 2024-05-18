@@ -1,0 +1,99 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{99CC5293-3B1B-4BAC-9F1E-317D8EB903B4}|Alarm-System\\Alarm-System.csproj|c:\\users\\kimer\\onedrive - usn\\kim\\master\\semester 8\\industrial it\\assignment scada\\alarm-system\\alarm-system\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99CC5293-3B1B-4BAC-9F1E-317D8EB903B4}|Alarm-System\\Alarm-System.csproj|solutionrelative:alarm-system\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CC5293-3B1B-4BAC-9F1E-317D8EB903B4}|Alarm-System\\Alarm-System.csproj|C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\alarm-system\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CC5293-3B1B-4BAC-9F1E-317D8EB903B4}|Alarm-System\\Alarm-System.csproj|solutionrelative:alarm-system\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CC5293-3B1B-4BAC-9F1E-317D8EB903B4}|Alarm-System\\Alarm-System.csproj|C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\alarm-system\\frmalarm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99CC5293-3B1B-4BAC-9F1E-317D8EB903B4}|Alarm-System\\Alarm-System.csproj|solutionrelative:alarm-system\\frmalarm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CC5293-3B1B-4BAC-9F1E-317D8EB903B4}|Alarm-System\\Alarm-System.csproj|C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\alarm-system\\frmalarm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CC5293-3B1B-4BAC-9F1E-317D8EB903B4}|Alarm-System\\Alarm-System.csproj|solutionrelative:alarm-system\\frmalarm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CC5293-3B1B-4BAC-9F1E-317D8EB903B4}|Alarm-System\\Alarm-System.csproj|C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\alarm-system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99CC5293-3B1B-4BAC-9F1E-317D8EB903B4}|Alarm-System\\Alarm-System.csproj|solutionrelative:alarm-system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\Alarm-System\\Program.cs",
+              "RelativeDocumentMoniker": "Alarm-System\\Program.cs",
+              "ToolTip": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\Alarm-System\\Program.cs",
+              "RelativeToolTip": "Alarm-System\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T20:04:03.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmLogin.cs",
+              "DocumentMoniker": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\Alarm-System\\FrmLogin.cs",
+              "RelativeDocumentMoniker": "Alarm-System\\FrmLogin.cs",
+              "ToolTip": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\Alarm-System\\FrmLogin.cs",
+              "RelativeToolTip": "Alarm-System\\FrmLogin.cs",
+              "ViewState": "AQIAAOIAAAAAAAAAAAAIwPMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T19:51:35.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmLogin.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\Alarm-System\\FrmLogin.cs",
+              "RelativeDocumentMoniker": "Alarm-System\\FrmLogin.cs",
+              "ToolTip": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\Alarm-System\\FrmLogin.cs [Design]",
+              "RelativeToolTip": "Alarm-System\\FrmLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T19:51:23.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmAlarm.cs",
+              "DocumentMoniker": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\Alarm-System\\FrmAlarm.cs",
+              "RelativeDocumentMoniker": "Alarm-System\\FrmAlarm.cs",
+              "ToolTip": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\Alarm-System\\FrmAlarm.cs",
+              "RelativeToolTip": "Alarm-System\\FrmAlarm.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAowBEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T19:32:54.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmAlarm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\Alarm-System\\FrmAlarm.cs",
+              "RelativeDocumentMoniker": "Alarm-System\\FrmAlarm.cs",
+              "ToolTip": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\Alarm-System\\Alarm-System\\FrmAlarm.cs [Design]",
+              "RelativeToolTip": "Alarm-System\\FrmAlarm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T19:31:34.886Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
