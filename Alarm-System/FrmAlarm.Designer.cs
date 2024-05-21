@@ -138,7 +138,7 @@
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblHeader.Location = new System.Drawing.Point(917, 40);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(206, 29);
+            this.lblHeader.Size = new System.Drawing.Size(158, 25);
             this.lblHeader.TabIndex = 6;
             this.lblHeader.Text = "Alarm monitoring";
             // 
@@ -150,7 +150,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -159,19 +159,19 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.signOutToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // signOutToolStripMenuItem
             // 
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.signOutToolStripMenuItem.Text = "Sign out";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // panAlarmMode
@@ -190,7 +190,7 @@
             this.rBtnAll.AutoSize = true;
             this.rBtnAll.Location = new System.Drawing.Point(30, 59);
             this.rBtnAll.Name = "rBtnAll";
-            this.rBtnAll.Size = new System.Drawing.Size(122, 20);
+            this.rBtnAll.Size = new System.Drawing.Size(119, 20);
             this.rBtnAll.TabIndex = 11;
             this.rBtnAll.TabStop = true;
             this.rBtnAll.Text = "Show all alarms";
@@ -204,7 +204,7 @@
             this.rBtnActive.Enabled = false;
             this.rBtnActive.Location = new System.Drawing.Point(30, 19);
             this.rBtnActive.Name = "rBtnActive";
-            this.rBtnActive.Size = new System.Drawing.Size(144, 20);
+            this.rBtnActive.Size = new System.Drawing.Size(141, 20);
             this.rBtnActive.TabIndex = 10;
             this.rBtnActive.TabStop = true;
             this.rBtnActive.Text = "Show active alarms";

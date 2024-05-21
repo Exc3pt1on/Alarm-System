@@ -77,6 +77,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(124, 22);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.Text = "usn1";
             // 
             // txtPassword
             // 
@@ -84,6 +85,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(124, 22);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "usn1";
             // 
             // lblUsername
             // 
@@ -108,7 +110,7 @@
             this.chbShowPassword.AutoSize = true;
             this.chbShowPassword.Location = new System.Drawing.Point(39, 205);
             this.chbShowPassword.Name = "chbShowPassword";
-            this.chbShowPassword.Size = new System.Drawing.Size(124, 20);
+            this.chbShowPassword.Size = new System.Drawing.Size(121, 20);
             this.chbShowPassword.TabIndex = 5;
             this.chbShowPassword.Text = "Show password";
             this.chbShowPassword.UseVisualStyleBackColor = true;
@@ -312,7 +314,7 @@
             this.chbShowPasswordNew.AutoSize = true;
             this.chbShowPasswordNew.Location = new System.Drawing.Point(42, 469);
             this.chbShowPasswordNew.Name = "chbShowPasswordNew";
-            this.chbShowPasswordNew.Size = new System.Drawing.Size(131, 20);
+            this.chbShowPasswordNew.Size = new System.Drawing.Size(128, 20);
             this.chbShowPasswordNew.TabIndex = 10;
             this.chbShowPasswordNew.Text = "Show passwords";
             this.chbShowPasswordNew.UseVisualStyleBackColor = true;

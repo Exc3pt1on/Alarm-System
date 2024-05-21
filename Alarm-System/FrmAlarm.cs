@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -10,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Alarm_System
@@ -22,10 +24,12 @@ namespace Alarm_System
         private int SelectedRow = 0;
         private string SelectedSystem;
         private DataTable CurrentDt = null;
+        DateTime LastResetTime;
         public FrmAlarm(string username)
         {
             InitializeComponent();
             Username = username;
+            LastResetTime = DateTime.Now;
             UpdateSystemsList();
         }
 
@@ -93,16 +97,7 @@ namespace Alarm_System
                 try
                 {
                     connection.Open();
-
-                    int affected = command.ExecuteNonQuery();
-                    if (affected > 0)
-                    {
-                        MessageBox.Show("Alarm successfully updated");
-                    }
-                    else
-                    {
-                        MessageBox.Show("No alarms were updated");
-                    }
+                    command.ExecuteNonQuery();
                 }
                 catch (Exception)
                 {
@@ -164,6 +159,10 @@ namespace Alarm_System
                                 break;
                             default:
                                 break;
+                        }
+                        if (dgvAlarms.Rows[i].Cells[2].Value.ToString() == "Acknowledged")
+                        {
+                            dgvAlarms.Rows[i].DefaultCellStyle.BackColor = Color.LightGray;
                         }
                     }
                 }
@@ -240,13 +239,14 @@ namespace Alarm_System
                 Series series = new Series();
                 series.ChartType = SeriesChartType.Line;
                 series.XValueType = ChartValueType.DateTime;
+                chartAlarms.Legends[0].Enabled = false;
 
                 List<double> values = new List<double>();
                 List<string> timestamp = new List<string>();
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    values.Add(Convert.ToDouble(row["Value"]));
+                    values.Add(Math.Round(Convert.ToDouble(row["Value"]), 2));
                     timestamp.Add(Convert.ToDateTime(row["Time"]).ToString("HH:mm:ss"));
                 }
 
@@ -263,6 +263,7 @@ namespace Alarm_System
                 chartAlarms.Titles.Add("Sensor data from alarm");
                 chartAlarms.ChartAreas[0].AxisX.Title = "Time";
                 chartAlarms.ChartAreas[0].AxisY.Title = "Temperature °C";
+                chartAlarms.ChartAreas[0].AxisY.LabelStyle.Format = "F1";
                 chartAlarms.Series.Add(series);
                 chartAlarms.Refresh();
 
@@ -271,11 +272,80 @@ namespace Alarm_System
             }
             catch (Exception)
             {
-                
+
+            }
+
+        }
+        private void GenerateAlarm(string type, int level, string description, string system)
+        {
+            DateTime timestamp = DateTime.Now;
+            LastResetTime = timestamp;
+            string status = "Active";
+
+            string connectionString = ConfigurationManager.ConnectionStrings["ScadaDB"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("InsertAlarm", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add("@System", SqlDbType.VarChar, 50).Value = system;
+                    command.Parameters.Add("@Type", SqlDbType.VarChar, 50).Value = type;
+                    command.Parameters.Add("@Level", SqlDbType.Int).Value = level;
+                    command.Parameters.Add("@Status", SqlDbType.VarChar, 50).Value = status;
+                    command.Parameters.Add("@Description", SqlDbType.VarChar, 50).Value = description;
+                    command.Parameters.Add("@Time", SqlDbType.DateTime).Value = timestamp;
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                }
             }
 
         }
 
+        private bool TestHighAlarm(string system, string device, string highAlarmName)
+        {
+            string query;
+            query = $"SELECT Value, HighLimit, Time FROM View_DeviceDataBySystemName WHERE Name_System = '{system}' AND Name_Device = '{device}'";
+            DataTable deviceData = GetDataFromDatabase(query);
+
+            query = $"SELECT Type, Status FROM View_AlarmBySystemName WHERE Name = '{system}'";
+            DataTable oldAlarms = GetDataFromDatabase(query);
+
+            DataRow[] oldAlarmRows = oldAlarms.Select($"Type = '{highAlarmName}' AND (Status = 'Active' OR Status = 'Acknowledged')");
+            DataRow[] deviceDataRows = deviceData.Select($"Value > HighLimit AND Time > #{LastResetTime.ToString("yyyy-MM-dd HH:mm:ss")}#");
+
+            if (oldAlarmRows.Length > 0)
+            {
+                return false;
+            }
+            else if (deviceDataRows.Length > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private bool TestLowAlarm(string system, string device, string lowAlarmName)
+        {
+            string query;
+            query = $"SELECT Value, LowLimit, Time FROM View_DeviceDataBySystemName WHERE Name_System = '{system}' AND Name_Device = '{device}'";
+            DataTable deviceData = GetDataFromDatabase(query);
+
+            query = $"SELECT Type, Status FROM View_AlarmBySystemName WHERE Name = '{system}'";
+            DataTable oldAlarms = GetDataFromDatabase(query);
+
+            DataRow[] oldAlarmRows = oldAlarms.Select($"Type = '{lowAlarmName}' AND (Status = 'Active' OR Status = 'Acknowledged')");
+            DataRow[] deviceDataRows = deviceData.Select($"Value < LowLimit AND Time > #{LastResetTime.ToString("yyyy-MM-dd HH:mm:ss")}#");
+
+            if (oldAlarmRows.Length > 0)
+            {
+                return false;
+            }
+            else if (deviceDataRows.Length > 0)
+            {
+                return true;
+            }
+            return false;
+        }
         private void btnAcknowledge_Click(object sender, EventArgs e)
         {
             UpdateAlarmParameters("Acknowledged", SelectedAlarmId);
@@ -291,11 +361,44 @@ namespace Alarm_System
         private void timer1_Tick(object sender, EventArgs e)
         {
             UpdateAlarmList(SelectedSystem);
+
+            //Generate Temp alarms
+            if (TestHighAlarm(SelectedSystem, "Temp1", "High temp"))
+            {
+                GenerateAlarm("High temp", 1, "Temperature is above threshold", SelectedSystem);
+            }
+            if (TestLowAlarm(SelectedSystem, "Temp1", "Low temp"))
+            {
+                GenerateAlarm("Low temp", 1, "Temperature is below threshold", SelectedSystem);
+            }
+
+            //Generate Heater alarms
+            if (TestHighAlarm(SelectedSystem, "Heater1", "High heating"))
+            {
+                GenerateAlarm("High heating", 3, "Heater voltage is above threshold", SelectedSystem);
+            }
+            if (TestLowAlarm(SelectedSystem, "Heater1", "Low heating"))
+            {
+                GenerateAlarm("Low heating", 3, "Heater voltage is below threshold", SelectedSystem);
+            }
+
+            //Generate Fan alarms
+            if (TestHighAlarm(SelectedSystem, "Fan1", "High fan speed"))
+            {
+                GenerateAlarm("High fan speed", 2, "Fan speed is above threshold", SelectedSystem);
+            }
+            if (TestLowAlarm(SelectedSystem, "Fan1", "Low fan speed"))
+            {
+                GenerateAlarm("Low fan speed", 2, "Fan speed is below threshold", SelectedSystem);
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
+
     }
 }
