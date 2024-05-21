@@ -16,6 +16,10 @@ namespace Alarm_System
 {
     public partial class FrmLogin : Form
     {
+        // Windows form that lets user login with username and hashed password from database
+        // Created by Kim Langvannskås
+        // Copied from Database Systems Assignment in IIA2017-1 24V Industrial Information Technology
+        // Latest update 19.05.2024
         public FrmLogin()
         {
             InitializeComponent();
@@ -167,7 +171,7 @@ namespace Alarm_System
             (resultCode, firstname) = CheckLoginCredentials(username, password);
             if (resultCode)
             {
-                FrmAlarm frmAlarm = new FrmAlarm();
+                FrmAlarm frmAlarm = new FrmAlarm(username);
                 frmAlarm.ShowDialog();
             }
             else

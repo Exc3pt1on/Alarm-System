@@ -38,6 +38,13 @@
             this.liLblNewAccount = new System.Windows.Forms.LinkLabel();
             this.panLogin = new System.Windows.Forms.Panel();
             this.panSignup = new System.Windows.Forms.Panel();
+            this.liLblBackToLogin = new System.Windows.Forms.LinkLabel();
+            this.txtPhoneNr = new System.Windows.Forms.TextBox();
+            this.lblPhoneNr = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmployeeNr = new System.Windows.Forms.TextBox();
+            this.lblEmployeeNr = new System.Windows.Forms.Label();
             this.txtPasswordNewRepeat = new System.Windows.Forms.TextBox();
             this.lblPasswordNewRepeat = new System.Windows.Forms.Label();
             this.txtLastname = new System.Windows.Forms.TextBox();
@@ -50,13 +57,6 @@
             this.chbShowPasswordNew = new System.Windows.Forms.CheckBox();
             this.lblUsernameNew = new System.Windows.Forms.Label();
             this.lblFirstname = new System.Windows.Forms.Label();
-            this.txtEmployeeNr = new System.Windows.Forms.TextBox();
-            this.lblEmployeeNr = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtPhoneNr = new System.Windows.Forms.TextBox();
-            this.lblPhoneNr = new System.Windows.Forms.Label();
-            this.liLblBackToLogin = new System.Windows.Forms.LinkLabel();
             this.panLogin.SuspendLayout();
             this.panSignup.SuspendLayout();
             this.SuspendLayout();
@@ -176,12 +176,71 @@
             this.panSignup.TabIndex = 10;
             this.panSignup.Visible = false;
             // 
+            // liLblBackToLogin
+            // 
+            this.liLblBackToLogin.AutoSize = true;
+            this.liLblBackToLogin.Location = new System.Drawing.Point(59, 542);
+            this.liLblBackToLogin.Name = "liLblBackToLogin";
+            this.liLblBackToLogin.Size = new System.Drawing.Size(87, 16);
+            this.liLblBackToLogin.TabIndex = 9;
+            this.liLblBackToLogin.TabStop = true;
+            this.liLblBackToLogin.Text = "Login instead";
+            this.liLblBackToLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.liLblBackToLogin_LinkClicked);
+            // 
+            // txtPhoneNr
+            // 
+            this.txtPhoneNr.Location = new System.Drawing.Point(42, 300);
+            this.txtPhoneNr.Name = "txtPhoneNr";
+            this.txtPhoneNr.Size = new System.Drawing.Size(123, 22);
+            this.txtPhoneNr.TabIndex = 6;
+            // 
+            // lblPhoneNr
+            // 
+            this.lblPhoneNr.AutoSize = true;
+            this.lblPhoneNr.Location = new System.Drawing.Point(42, 281);
+            this.lblPhoneNr.Name = "lblPhoneNr";
+            this.lblPhoneNr.Size = new System.Drawing.Size(60, 16);
+            this.lblPhoneNr.TabIndex = 17;
+            this.lblPhoneNr.Text = "Phone nr";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(42, 249);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(123, 22);
+            this.txtEmail.TabIndex = 5;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(42, 230);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(41, 16);
+            this.lblEmail.TabIndex = 15;
+            this.lblEmail.Text = "Email";
+            // 
+            // txtEmployeeNr
+            // 
+            this.txtEmployeeNr.Location = new System.Drawing.Point(42, 196);
+            this.txtEmployeeNr.Name = "txtEmployeeNr";
+            this.txtEmployeeNr.Size = new System.Drawing.Size(123, 22);
+            this.txtEmployeeNr.TabIndex = 4;
+            // 
+            // lblEmployeeNr
+            // 
+            this.lblEmployeeNr.AutoSize = true;
+            this.lblEmployeeNr.Location = new System.Drawing.Point(42, 177);
+            this.lblEmployeeNr.Name = "lblEmployeeNr";
+            this.lblEmployeeNr.Size = new System.Drawing.Size(83, 16);
+            this.lblEmployeeNr.TabIndex = 13;
+            this.lblEmployeeNr.Text = "Employee nr";
+            // 
             // txtPasswordNewRepeat
             // 
             this.txtPasswordNewRepeat.Location = new System.Drawing.Point(42, 441);
             this.txtPasswordNewRepeat.Name = "txtPasswordNewRepeat";
             this.txtPasswordNewRepeat.Size = new System.Drawing.Size(123, 22);
-            this.txtPasswordNewRepeat.TabIndex = 10;
+            this.txtPasswordNewRepeat.TabIndex = 8;
             // 
             // lblPasswordNewRepeat
             // 
@@ -197,7 +256,7 @@
             this.txtLastname.Location = new System.Drawing.Point(42, 136);
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(123, 22);
-            this.txtLastname.TabIndex = 6;
+            this.txtLastname.TabIndex = 3;
             // 
             // txtPasswordNew
             // 
@@ -254,7 +313,7 @@
             this.chbShowPasswordNew.Location = new System.Drawing.Point(42, 469);
             this.chbShowPasswordNew.Name = "chbShowPasswordNew";
             this.chbShowPasswordNew.Size = new System.Drawing.Size(131, 20);
-            this.chbShowPasswordNew.TabIndex = 5;
+            this.chbShowPasswordNew.TabIndex = 10;
             this.chbShowPasswordNew.Text = "Show passwords";
             this.chbShowPasswordNew.UseVisualStyleBackColor = true;
             this.chbShowPasswordNew.CheckedChanged += new System.EventHandler(this.chbShowPasswordNew_CheckedChanged);
@@ -276,65 +335,6 @@
             this.lblFirstname.Size = new System.Drawing.Size(69, 16);
             this.lblFirstname.TabIndex = 4;
             this.lblFirstname.Text = "First name";
-            // 
-            // txtEmployeeNr
-            // 
-            this.txtEmployeeNr.Location = new System.Drawing.Point(42, 196);
-            this.txtEmployeeNr.Name = "txtEmployeeNr";
-            this.txtEmployeeNr.Size = new System.Drawing.Size(123, 22);
-            this.txtEmployeeNr.TabIndex = 12;
-            // 
-            // lblEmployeeNr
-            // 
-            this.lblEmployeeNr.AutoSize = true;
-            this.lblEmployeeNr.Location = new System.Drawing.Point(42, 177);
-            this.lblEmployeeNr.Name = "lblEmployeeNr";
-            this.lblEmployeeNr.Size = new System.Drawing.Size(83, 16);
-            this.lblEmployeeNr.TabIndex = 13;
-            this.lblEmployeeNr.Text = "Employee nr";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(42, 249);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(123, 22);
-            this.txtEmail.TabIndex = 14;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(42, 230);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(41, 16);
-            this.lblEmail.TabIndex = 15;
-            this.lblEmail.Text = "Email";
-            // 
-            // txtPhoneNr
-            // 
-            this.txtPhoneNr.Location = new System.Drawing.Point(42, 300);
-            this.txtPhoneNr.Name = "txtPhoneNr";
-            this.txtPhoneNr.Size = new System.Drawing.Size(123, 22);
-            this.txtPhoneNr.TabIndex = 16;
-            // 
-            // lblPhoneNr
-            // 
-            this.lblPhoneNr.AutoSize = true;
-            this.lblPhoneNr.Location = new System.Drawing.Point(42, 281);
-            this.lblPhoneNr.Name = "lblPhoneNr";
-            this.lblPhoneNr.Size = new System.Drawing.Size(60, 16);
-            this.lblPhoneNr.TabIndex = 17;
-            this.lblPhoneNr.Text = "Phone nr";
-            // 
-            // liLblBackToLogin
-            // 
-            this.liLblBackToLogin.AutoSize = true;
-            this.liLblBackToLogin.Location = new System.Drawing.Point(59, 542);
-            this.liLblBackToLogin.Name = "liLblBackToLogin";
-            this.liLblBackToLogin.Size = new System.Drawing.Size(87, 16);
-            this.liLblBackToLogin.TabIndex = 18;
-            this.liLblBackToLogin.TabStop = true;
-            this.liLblBackToLogin.Text = "Login instead";
-            this.liLblBackToLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.liLblBackToLogin_LinkClicked);
             // 
             // FrmLogin
             // 
